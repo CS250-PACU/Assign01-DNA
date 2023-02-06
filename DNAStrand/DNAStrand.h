@@ -43,7 +43,6 @@ public:
 	bool isLegalStrand () const;
 
 private:
-	
 	string mBases;
 
 	char dnaBaseComplement (char base) const;
