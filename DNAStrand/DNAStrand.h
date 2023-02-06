@@ -16,29 +16,35 @@
 
 using namespace std;
 
+const char INVALID_BASE = '!';
+const char ADENINE = 'A';
+const char CYTOSINE = 'C'; 
+const char GUANINE = 'G';
+const char THYMINE = 'T'; 
+
 class DNAStrand {
 
 public:
-	DNAStrand(const string& rcBases = "");
-	DNAStrand(const DNAStrand& rcDNAStrand);
+	DNAStrand (const string& rcBases = "");
+	DNAStrand (const DNAStrand& rcDNAStrand);
 
-	char getBase(int whichBase) const;
+	char getBase (int whichBase) const;
 
-	bool read(istream& rcInStream);
-	void write(ostream& rcOutStream) const;
+	bool read (istream& rcInStream);
+	void write (ostream& rcOutStream) const;
 
-	DNAStrand reverse() const;
-	DNAStrand complement() const;
-	double gcContent() const;
-	double hamming(const DNAStrand& rcDNAStrand) const;
+	DNAStrand reverse () const;
+	DNAStrand complement () const;
+	double gcContent () const;
+	double hamming (const DNAStrand& rcDNAStrand) const;
 
-	unsigned int size() const;
-	bool isEqual(const DNAStrand& rcDNAStrand) const;
-	bool isLegalStrand() const;
+	unsigned int size () const;
+	bool isEqual (const DNAStrand& rcDNAStrand) const;
+	bool isLegalStrand () const;
 
 private:
-	char INVALID_BASE = '!';
+	
 	string mBases;
 
-	char dnaBaseComplement(char base) const;
+	char dnaBaseComplement (char base) const;
 };
